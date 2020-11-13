@@ -23,3 +23,10 @@ export const removeItemFromCart = (cartItems, cartItemToRemove) => {
 
   return items.filter((item) => item.quantity > 0);
 };
+
+/* CALCULATE ITEM QUANTITY */
+export const countItemQuantity = (items) => {
+  return items.reduce((sum, quant) => {
+    return sum + quant.quantity;
+  }, 0);
+};

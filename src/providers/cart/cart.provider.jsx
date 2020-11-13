@@ -1,7 +1,7 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext, useState, useEffect } from 'react';
 
 /* IMPORT UTILS */
-import { addItemToCart, removeItemFromCart } from './cart.utils';
+import { addItemToCart, removeItemFromCart, countItemQuantity } from './cart.utils';
 
 export const CartContext = createContext({
   hidden: true,
@@ -21,14 +21,10 @@ const CartProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
   const [cartItemsCount, setCartItemsCount] = useState(0);
 
-  /* CALCULATE ITEM QUANTITY */
-  const countItemQuantity = (items) => {
-    setCartItemsCount(
-      items.reduce((sum, quant) => {
-        return sum + quant.quantity;
-      }, 0)
-    );
-  };
+  /* USE EFFECT HOOK TO CALCULATE ITEM COUNT */
+  useEffect(() => {
+    setCartItemsCount(countItemQuantity(cartItems));
+  }, [cartItems]);
 
   /* CONTEXT FUNCTIONS FOR STATE */
   const addItem = (item) => {
