@@ -6,7 +6,7 @@ import App from './App';
 /* ROUTER MODULE */
 import { BrowserRouter } from 'react-router-dom';
 
-/* PROVIDERS */
+/* CUSTOM PROVIDERS */
 import CartProvider from './providers/cart/cart.provider';
 
 ReactDOM.render(
