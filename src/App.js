@@ -1,5 +1,7 @@
 import './App.css';
 import React, { useState, useEffect } from 'react';
+
+/* REACT ROUTES */
 import { Route, Switch, Redirect } from 'react-router-dom';
 
 /* REACT COMPONENTS */
