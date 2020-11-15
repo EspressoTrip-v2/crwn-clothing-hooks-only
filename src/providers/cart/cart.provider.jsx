@@ -3,6 +3,7 @@ import React, { createContext, useState, useEffect } from 'react';
 /* IMPORT UTILS */
 import { addItemToCart, removeItemFromCart, countItemQuantity } from './cart.utils';
 
+/* CONTEXT FOR APP COMPONENTS */
 export const CartContext = createContext({
   hidden: true,
   toggleHidden: () => {},
